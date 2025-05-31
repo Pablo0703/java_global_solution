@@ -1,0 +1,972 @@
+type: collection.insomnia.rest/5.0
+name: GlobalSolution
+meta:
+  id: wrk_f6e6ff7f188241258ee57dbeaad33055
+  created: 1748479829005
+  modified: 1748479829005
+collection:
+  - name: Usuario
+    meta:
+      id: fld_7bcc62138b19489593a1a0b573421f08
+      created: 1748479842493
+      modified: 1748479945680
+      sortKey: -1748479842493
+    children:
+      - url: http://localhost:8080/usuarios
+        name: Buscar Todos
+        meta:
+          id: req_cc44cce0fceb42e8bce9dbe8ed2a344a
+          created: 1748479949287
+          modified: 1748706975667
+          isPrivate: false
+          sortKey: -1748479949288
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/7
+        name: Buscar ID
+        meta:
+          id: req_4fae9f50755e49ff8e45dd92cb93be87
+          created: 1748479951997
+          modified: 1748706965562
+          isPrivate: false
+          sortKey: -1748479951997
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: Criar
+        meta:
+          id: req_e038c293c00143249beab6e8f9e5bcf0
+          created: 1748479954820
+          modified: 1748706632933
+          isPrivate: false
+          sortKey: -1748479954820
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "nome": "João Silva",
+              "email": "joao@gmail.com",
+              "telefone": "11999999999",
+              "senha": "Segura123!",
+              "perfil": "ADMIN"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/7
+        name: Atualiza
+        meta:
+          id: req_e81d798b33934ba88145d9a0591bbbd4
+          created: 1748479957183
+          modified: 1748706886935
+          isPrivate: false
+          sortKey: -1748479957183
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "João",
+              "email": "joaozinho@outolok.com",
+              "senha": "123456",
+              "telefone": "11999999999",
+              "perfil": "DEFESA_CIVIL"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/9
+        name: Delete
+        meta:
+          id: req_c84423300cfb4b2596f49d4560ace935
+          created: 1748479958987
+          modified: 1748706947323
+          isPrivate: false
+          sortKey: -1748479958987
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Sensor
+    meta:
+      id: fld_4c66de29c8584efc8724da6fa1dd561e
+      created: 1748479844802
+      modified: 1748479938725
+      sortKey: -1748479844802
+    children:
+      - url: http://localhost:8080/sensores
+        name: Buscar todos
+        meta:
+          id: req_1e854ce3e0644904b1519abe4015400b
+          created: 1748479973681
+          modified: 1748710883153
+          isPrivate: false
+          sortKey: -1748479973681
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/sensores/00:1B:44:11:3A:B7
+        name: Buscar ID
+        meta:
+          id: req_b6286f0a128946e9b2d17e3e43423803
+          created: 1748479975893
+          modified: 1748710878357
+          isPrivate: false
+          sortKey: -1748479975893
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/sensores
+        name: Criar
+        meta:
+          id: req_3816d4e2cd994f3db633b11f522b48c8
+          created: 1748479978733
+          modified: 1748710868810
+          isPrivate: false
+          sortKey: -1748479978733
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "id": "00:1B:44:11:3A:B7",
+              "idArea": 3,
+              "tipo": "NIVEL_AGUA",
+              "modelo": "SensorTech-X100",
+              "dataInstalacao": "2024-10-05",
+              "ultimaManutencao": "2025-03-15",
+              "status": "ATIVO"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/sensores/00:1B:44:11:3A:B7
+        name: Atualizar
+        meta:
+          id: req_92fb8b032b2f412a8152f6a492017007
+          created: 1748479980446
+          modified: 1748710889674
+          isPrivate: false
+          sortKey: -1748479980446
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "id": "00:1B:44:11:3A:B7",
+              "idArea": 3,
+              "tipo": "NIVEL_AGUA",
+              "modelo": "SensorTech-X100",
+              "dataInstalacao": "2024-10-05",
+              "ultimaManutencao": "2025-03-15",
+              "status": "INATIVO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/3
+        name: Deletar
+        meta:
+          id: req_108d069ffa594fcfb34c08a3e036c65b
+          created: 1748479982521
+          modified: 1748710910145
+          isPrivate: false
+          sortKey: -1748479982521
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Notificacao
+    meta:
+      id: fld_f07a4745eccb44558b5a21ea22e9fefb
+      created: 1748479852152
+      modified: 1748479929365
+      sortKey: -1748479852152
+    children:
+      - url: http://localhost:8080/notificacoes
+        name: Buscar todos
+        meta:
+          id: req_8eaa954382e949fbb018debc78bd6bc0
+          created: 1748479985010
+          modified: 1748714936313
+          isPrivate: false
+          sortKey: -1748479985010
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/notificacoes/1
+        name: Buscar ID
+        meta:
+          id: req_2d2dc213ee644fad9f1978009ea2a902
+          created: 1748479987288
+          modified: 1748714944176
+          isPrivate: false
+          sortKey: -1748479987288
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/notificacoes
+        name: Criar
+        meta:
+          id: req_e5655009c1cc4fa19b52df93a91cde60
+          created: 1748479989089
+          modified: 1748714949000
+          isPrivate: false
+          sortKey: -1748479989089
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "idAlerta": 1,
+              "idUsuario": 10,
+              "canalEnvio": "SMS",
+              "statusEnvio": "ENVIADO",
+              "timestampEnvio": "2025-05-31T18:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/notificacoes/2
+        name: Atualizar
+        meta:
+          id: req_8ffb8ec397224b4ba46e7b352c0bfa30
+          created: 1748479990820
+          modified: 1748714956951
+          isPrivate: false
+          sortKey: -1748479990820
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "idAlerta": 1,
+              "idUsuario": 10,
+              "canalEnvio": "EMAIL",
+              "statusEnvio": "ENVIADO",
+              "timestampEnvio": "2025-05-31T18:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/notificacoes/2
+        name: Deletar
+        meta:
+          id: req_4586dc3d6c324e41b655bf7035b89d59
+          created: 1748479992287
+          modified: 1748714961944
+          isPrivate: false
+          sortKey: -1748479992287
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Leitura Sensor
+    meta:
+      id: fld_601cd408b7ee4d199e92241f7d860622
+      created: 1748479855412
+      modified: 1748479921948
+      sortKey: -1748479855412
+    children:
+      - url: http://localhost:8080/leituras
+        name: Buscar todos
+        meta:
+          id: req_45509fc9fb544f0cb168a6a323481e7b
+          created: 1748479994461
+          modified: 1748712543379
+          isPrivate: false
+          sortKey: -1748479994461
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/leituras/1
+        name: Buscar ID
+        meta:
+          id: req_1ddcd0fd7afb4f20972c941456ed3643
+          created: 1748479996478
+          modified: 1748712548525
+          isPrivate: false
+          sortKey: -1748479996478
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/leituras
+        name: Criar
+        meta:
+          id: req_ff2cc21bff9140cda5bc351ff94ec886
+          created: 1748479998640
+          modified: 1748712035307
+          isPrivate: false
+          sortKey: -1748479998640
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "idSensor": "00:1B:44:11:3A:B7",
+              "valor": 4.0,
+              "unidade": "m",
+              "timestamp": "2025-05-31T17:25:00"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/leituras/2
+        name: Atualiza
+        meta:
+          id: req_7432502c5c274c27beb886c4cdb727fa
+          created: 1748480000132
+          modified: 1748712555208
+          isPrivate: false
+          sortKey: -1748480000132
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "id": 1,
+              "idSensor": "00:1B:44:11:3A:B7",
+              "tipoLeitura": "NIVEL_AGUA",
+              "valor": 4.2,
+              "unidade": "m",
+              "timestamp": "2025-05-31T18:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/leituras/2
+        name: Deleta
+        meta:
+          id: req_89f64bf465e04e4885273bcf7cf2ecca
+          created: 1748480001909
+          modified: 1748712560075
+          isPrivate: false
+          sortKey: -1748480001909
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Inscricao Alerta
+    meta:
+      id: fld_3078de7e8a6648b98d5ff1976fe4a549
+      created: 1748479857271
+      modified: 1748479909734
+      sortKey: -1748479857271
+    children:
+      - url: http://localhost:8080/inscricoes
+        name: New Request
+        meta:
+          id: req_a032b42c33a04801a4856c6e207e542b
+          created: 1748480003615
+          modified: 1748715581524
+          isPrivate: false
+          sortKey: -1748480003615
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/inscricoes/1
+        name: New Request
+        meta:
+          id: req_8c95dc4a26cc40d9b48467be69b65655
+          created: 1748480005314
+          modified: 1748715588562
+          isPrivate: false
+          sortKey: -1748480005314
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/inscricoes
+        name: New Request
+        meta:
+          id: req_cfd38e6cdbb2440f910644344b51fa33
+          created: 1748480007332
+          modified: 1748715245282
+          isPrivate: false
+          sortKey: -1748480007332
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "idUsuario": 10,
+              "idArea": 3,
+              "timestamp": "2025-05-31T18:15:00",
+              "receberEmail": false,
+              "receberSms": true,
+              "receberPush": false
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/inscricoes/1
+        name: New Request
+        meta:
+          id: req_9da6e1fb3b9e477db648d41331d1f503
+          created: 1748480008831
+          modified: 1748715568049
+          isPrivate: false
+          sortKey: -1748480008832
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "id": 1,
+              "idUsuario": 10,
+              "idArea": 3,
+              "timestamp": "2025-05-31T18:35:00",
+              "receberEmail": true,
+              "receberSms": false,
+              "receberPush": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/inscricoes/1
+        name: New Request
+        meta:
+          id: req_f14e68c04e14461985034d111df20306
+          created: 1748480010706
+          modified: 1748715599654
+          isPrivate: false
+          sortKey: -1748480010706
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Area Risco
+    meta:
+      id: fld_728b453298f24733a9b42c6cfc34b731
+      created: 1748479859029
+      modified: 1748479900044
+      sortKey: -1748479859029
+    children:
+      - url: http://localhost:8080/areas
+        name: Busca Todos
+        meta:
+          id: req_076ef4bc46144da2a93c2f76963dae71
+          created: 1748480012376
+          modified: 1748710291536
+          isPrivate: false
+          sortKey: -1748480012376
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/areas/3
+        name: Busca ID
+        meta:
+          id: req_50eadc8d5ab44121b1ae2b1748e7d9e4
+          created: 1748480014297
+          modified: 1748710216983
+          isPrivate: false
+          sortKey: -1748480014297
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/areas
+        name: Criar
+        meta:
+          id: req_7241e7ba47b04ba6a6662f4bd1d21b6d
+          created: 1748480015962
+          modified: 1748708293883
+          isPrivate: false
+          sortKey: -1748480015962
+        method: POST
+        body:
+          mimeType: application/json
+          text: >+
+            {
+              "nome": "Bacia do Rio tiete - Ponte Cidade Jardim",
+              "latitude": -23.4175,
+              "longitude": -46.6823,
+              "nivelEvacuacao": 3.0,
+              "nivelPreventivo": 2.0,
+              "nivelEmergencia": 2.5,
+              "nivelSeca": 0.5,
+              "nivelChuva": 1.5,
+              "areaAlagadaAlerta": 100.0,
+              "areaAlagadaEmergencia": 200.0,
+              "descricao": "Área com risco elevado de alagamento em períodos de chuvas fortes."
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/areas/3
+        name: Atualizar
+        meta:
+          id: req_7b6fd5b69d5a4938b656058f83f0e909
+          created: 1748480017268
+          modified: 1748710120046
+          isPrivate: false
+          sortKey: -1748480017268
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >+
+            {
+              "nome": "Bacia do Rio Tietê - Ponte Cidade Jardim",
+              "latitude": -23.4175,
+              "longitude": -46.6823,
+              "nivelSeca": 0.5,
+              "nivelNormalEstacaoSeca": 0.5,
+              "nivelChuva": 1.0,
+              "nivelNormalEstacaoChuva": 1.0,
+              "nivelPreventivo": 1.5,
+              "nivelEmergencia": 2.5,
+              "nivelEvacuacao": 3.0,
+              "areaAlagadaAlerta": 100.0,
+              "areaAlagadaEmergencia": 200.0,
+              "metodoNivel": "Estação automática",
+              "metodoExtensao": "Satélite",
+              "fonte": "CETESB",
+              "ultimaAtualizacao": "2025-05-31T17:00:00",
+              "responsavel": "Sistema Automático",
+              "descricao": "Área com risco elevado de alagamento em períodos de chuvas fortes."
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/areas/2
+        name: Deletar
+        meta:
+          id: req_c18a02548701437fa6e527bf3bb833ad
+          created: 1748480018590
+          modified: 1748710309126
+          isPrivate: false
+          sortKey: -1748480018590
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Alerta
+    meta:
+      id: fld_2833ea10d6bf4ff4b566ab6805bccffd
+      created: 1748479864254
+      modified: 1748479890751
+      sortKey: -1748479864254
+    children:
+      - url: http://localhost:8080/alertas
+        name: Buscar Todos
+        meta:
+          id: req_a34db07a8dd54317bf60cae15f5f54ae
+          created: 1748480020371
+          modified: 1748714413362
+          isPrivate: false
+          sortKey: -1748480020371
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/alertas/2
+        name: Buscar ID
+        meta:
+          id: req_a2e80d92c3c84d72accc3f2f2567b6fc
+          created: 1748480022575
+          modified: 1748714420987
+          isPrivate: false
+          sortKey: -1748480022575
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/alertas
+        name: Criar
+        meta:
+          id: req_c94bb1a2c5c743f792f0ef381607a2bc
+          created: 1748480024460
+          modified: 1748714431574
+          isPrivate: false
+          sortKey: -1748480024460
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "idArea": 3,
+              "idLeituraGatilho": 1,
+              "timestamp": "2025-05-31T18:00:00",
+              "tipo": "EVACUACAO",
+              "mensagem": "Evacuação imediata necessária devido ao aumento repentino no nível da água.",
+              "status": "ATIVO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/alertas/2
+        name: Atualizar
+        meta:
+          id: req_a499864ccad94754a6d34d473ad014b6
+          created: 1748480026085
+          modified: 1748714437712
+          isPrivate: false
+          sortKey: -1748480026085
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "id": 2,
+              "idArea": 3,
+              "idLeituraGatilho": 1,
+              "timestamp": "2025-05-31T18:30:00",
+              "tipo": "PREVENTIVO",
+              "mensagem": "Situação sob controle, mas monitoramento contínuo necessário.",
+              "status": "RESOLVIDO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/alertas/2
+        name: Deletar
+        meta:
+          id: req_b1d3cd6dae644794935b7c8ae8a3a217
+          created: 1748480027821
+          modified: 1748714444262
+          isPrivate: false
+          sortKey: -1748480027821
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_3d2cb9b830a5a71138aa854873bb433ed93ab261
+    created: 1748479829008
+    modified: 1748479829008
+environments:
+  name: Base Environment
+  meta:
+    id: env_3d2cb9b830a5a71138aa854873bb433ed93ab261
+    created: 1748479829006
+    modified: 1748479829006
+    isPrivate: false
