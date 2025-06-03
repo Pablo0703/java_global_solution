@@ -20,7 +20,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Exponha a porta da aplicação
-EXPOSE 8080
+EXPOSE 8081
 
 # Comando de inicialização
 ENTRYPOINT ["java", "-jar", "app.jar"]
