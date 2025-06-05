@@ -47,6 +47,37 @@ O backend do SMAE foi desenvolvido utilizando Java Spring Boot, seguindo os prin
    http://localhost:8080
    ```
 
+🔄 Sequência de Funcionamento do Sistema
+Cadastro de Usuário
+
+Inicie criando os usuários que irão interagir com o sistema, como operadores ou responsáveis por áreas monitoradas.
+
+Cadastro da Área de Risco
+
+Registre as áreas que serão monitoradas. Cada área pode conter sensores associados e será base para alertas futuros.
+
+Cadastro de Sensor
+
+Adicione sensores que serão posicionados nas áreas de risco. Esses sensores serão responsáveis por enviar leituras ambientais (temperatura, umidade, etc.).
+
+Registro de Leitura do Sensor
+
+As leituras dos sensores são registradas no sistema, indicando os valores detectados em tempo real ou por intervalo.
+
+Criação de Alerta
+
+Configure alertas com base em condições específicas (ex: temperatura acima de 40°C). Esses alertas serão ativados quando leituras excederem os limites definidos.
+
+Inscrição em Alerta
+
+Usuários podem se inscrever para receber alertas de áreas específicas ou tipos de risco. Isso garante que apenas interessados sejam notificados.
+
+Geração de Notificação
+
+Quando um alerta é ativado, o sistema gera automaticamente uma notificação para os usuários inscritos, alertando sobre o risco detectado.
+
+
+
 ## Banco de Dados
 
 * A aplicação conecta-se a um banco Oracle configurado via application.properties ou application.yml.
