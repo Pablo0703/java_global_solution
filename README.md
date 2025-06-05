@@ -20,13 +20,13 @@ O backend do SMAE foi desenvolvido utilizando Java Spring Boot, seguindo os prin
 1. Clone o repositório:
 
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone [<URL_DO_REPOSITORIO>](https://github.com/Pablo0703/java_global_solution)
    ```
 
 2. Navegue até a pasta do projeto:
 
    ```bash
-   cd smae-backend
+   cd...
    ```
 
 3. Para rodar via Docker (certifique-se de que Docker esteja instalado):
