@@ -15,8 +15,7 @@
 9. [Endpoints - Acesso Rápido](#9-endpoints---acesso-rápido)
 10. [Ordem Recomendada para Testes](#10-ordem-recomendada-para-testes)
 11. [Prints do Swagger](#11-prints-do-swagger)
-12. 
-13. [Autores](#13-autores)
+12. [Autores](#12-autores)
 
 ---
 
@@ -125,21 +124,15 @@ A API foi testada usando o [Insomnia](https://insomnia.rest/), realizando requis
 | Render         | `https://java-global-solution.onrender.com`                       |
 | Swagger Render | `https://java-global-solution.onrender.com/swagger-ui/index.html` |
 
-Endpoints Diretos (em ordem de uso recomendada):
+### Endpoints Diretos (em ordem de uso recomendada):
 
-http://localhost:8080/usuarios
-
-http://localhost:8080/areas
-
-http://localhost:8080/sensores
-
-http://localhost:8080/leituras
-
-http://localhost:8080/alertas
-
-http://localhost:8080/notificacoes
-
-http://localhost:8080/inscricoes
+* `http://localhost:8080/usuarios`
+* `http://localhost:8080/areas`
+* `http://localhost:8080/sensores`
+* `http://localhost:8080/leituras`
+* `http://localhost:8080/alertas`
+* `http://localhost:8080/notificacoes`
+* `http://localhost:8080/inscricoes`
 
 ---
 
@@ -161,21 +154,19 @@ A seguir, prints da documentação Swagger demonstrando cada etapa do funcioname
 
 | Funcionalidade            | Imagem                                         |
 | ------------------------- | ---------------------------------------------- |
-| Cadastro de Usuário       | ![image](https://github.com/user-attachments/assets/df630f43-c668-4df9-9a56-48e45ee090af)|
+| Cadastro de Usuário       | ![](./imagens/swagger-cadastro-usuario.png)    |
+| Cadastro de Área de Risco | ![](./imagens/swagger-cadastro-area-risco.png) |
+| Cadastro de Sensor        | ![](./imagens/swagger-cadastro-sensor.png)     |
+| Leitura de Sensores       | ![](./imagens/swagger-leitura-sensor.png)      |
+| Criação de Alerta         | ![](./imagens/swagger-criacao-alerta.png)      |
+| Inscrição em Alerta       | ![](./imagens/swagger-inscricao-alerta.png)    |
+| Tela de Notificações      | ![](./imagens/swagger-notificacoes.png)        |
 
-| Cadastro de Área de Risco | ![image](https://github.com/user-attachments/assets/50b6f69d-2056-4359-b516-5f1d6425a07e)|
+---
 
-| Cadastro de Sensor        | ![image](https://github.com/user-attachments/assets/b82f2540-453a-4779-8597-48fa243a18f7)|
+## 12. Exemplo de JSON para Testes
 
-| Leitura de Sensores       | ![image](https://github.com/user-attachments/assets/4915bfcb-f813-4369-9261-1360fb53bbb2)|
-
-| Criação de Alerta         | ![image](https://github.com/user-attachments/assets/cc877b92-b855-45b9-9856-08fbfe904881)|
-
-| Inscrição em Alerta       | ![image](https://github.com/user-attachments/assets/5d94a087-6e2e-4c5b-a2e0-042009163e98)|
-
-| Tela de Notificações      | ![image](https://github.com/user-attachments/assets/7c0accc1-6941-4595-8a44-2b0a64616ab8)|
-
-## 12. Json
+```json
 {
   "usuario": {
     "nome": "Joana Mendes",
@@ -233,8 +224,9 @@ A seguir, prints da documentação Swagger demonstrando cada etapa do funcioname
     "mensagemAlerta": "Nível crítico atingido, evacuação necessária."
   }
 }
+```
 
-## 13. Autores
+\---## 13. Autores
 
 | RM     | Nome                            |
 | ------ | ------------------------------- |
