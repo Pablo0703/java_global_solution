@@ -15,7 +15,8 @@
 9. [Endpoints - Acesso Rápido](#9-endpoints---acesso-rápido)
 10. [Ordem Recomendada para Testes](#10-ordem-recomendada-para-testes)
 11. [Prints do Swagger](#11-prints-do-swagger)
-12. [Autores](#12-autores)
+12. 
+13. [Autores](#13-autores)
 
 ---
 
@@ -174,7 +175,66 @@ A seguir, prints da documentação Swagger demonstrando cada etapa do funcioname
 
 | Tela de Notificações      | ![image](https://github.com/user-attachments/assets/7c0accc1-6941-4595-8a44-2b0a64616ab8)|
 
-## 12. Autores
+## 12. Json
+{
+  "usuario": {
+    "nome": "Joana Mendes",
+    "email": "joana@email.com",
+    "senha": "senhaSegura123",
+    "telefone": "11988887777",
+    "perfil": "CIDADAO"
+  },
+  "sensor": {
+    "idSensor": "SENSOR001",
+    "idArea": 1,
+    "tipoSensor": "NIVEL_AGUA",
+    "modelo": "Modelo-X",
+    "ultimaManutencao": "2025-06-01",
+    "statusSensor": "ATIVO"
+  },
+  "notificacao": {
+    "idAlerta": 100,
+    "idUsuario": 1,
+    "canalEnvio": "EMAIL"
+  },
+  "leituraSensor": {
+    "idSensor": "SENSOR001",
+    "valorLeitura": 2.8,
+    "unidadeMedida": "m"
+  },
+  "inscricaoAlerta": {
+    "idUsuario": 1,
+    "idArea": 1,
+    "receberEmail": true,
+    "receberSms": false,
+    "receberPush": true
+  },
+  "areaRisco": {
+    "nomeArea": "Bairro do Centro",
+    "latitude": -23.5505,
+    "longitude": -46.6333,
+    "nivelNormalEstacaoSeca": 1.2,
+    "nivelNormalEstacaoChuva": 2.0,
+    "nivelAlertaPreventivo": 2.5,
+    "nivelAlertaEmergencia": 3.0,
+    "nivelEvacuacao": 3.5,
+    "areaAlagadaAlerta": 1.5,
+    "areaAlagadaEmergencia": 2.5,
+    "metodoMedicaoNivel": "Sensor IoT",
+    "metodoMedicaoExtensao": "LIDAR",
+    "fonteDados": "Sistema Integrado",
+    "responsavelAtualizacao": "Equipe Técnica",
+    "descricao": "Área próxima ao rio com alto risco em época de chuvas"
+  },
+  "alerta": {
+    "idArea": 1,
+    "idLeituraGatilho": 10,
+    "tipoAlerta": "EMERGENCIA",
+    "mensagemAlerta": "Nível crítico atingido, evacuação necessária."
+  }
+}
+
+## 13. Autores
 
 | RM     | Nome                            |
 | ------ | ------------------------------- |
