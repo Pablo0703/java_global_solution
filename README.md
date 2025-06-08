@@ -154,13 +154,13 @@ A seguir, prints da documentação Swagger demonstrando cada etapa do funcioname
 
 | Funcionalidade            | Imagem                                         |
 | ------------------------- | ---------------------------------------------- |
-| Cadastro de Usuário       | ![](./imagens/swagger-cadastro-usuario.png)    |
-| Cadastro de Área de Risco | ![](./imagens/swagger-cadastro-area-risco.png) |
-| Cadastro de Sensor        | ![](./imagens/swagger-cadastro-sensor.png)     |
-| Leitura de Sensores       | ![](./imagens/swagger-leitura-sensor.png)      |
-| Criação de Alerta         | ![](./imagens/swagger-criacao-alerta.png)      |
-| Inscrição em Alerta       | ![](./imagens/swagger-inscricao-alerta.png)    |
-| Tela de Notificações      | ![](./imagens/swagger-notificacoes.png)        |
+| Cadastro de Usuário       | ![image](https://github.com/user-attachments/assets/6ab46a66-4d4c-4f67-893c-7126102dbbcc)|
+| Cadastro de Área de Risco | ![image](https://github.com/user-attachments/assets/5a0ce700-5029-4421-b957-990fffa14c31)|
+| Cadastro de Sensor        | ![image](https://github.com/user-attachments/assets/1020316a-157e-4c2e-8d78-67acbeeacb60)|
+| Leitura de Sensores       | ![image](https://github.com/user-attachments/assets/2af06187-361f-4e30-8426-9062e55ca4a1)|
+| Criação de Alerta         | ![image](https://github.com/user-attachments/assets/5b6ecfcc-9f67-4c44-a7a4-6f0ca92ac83c)|
+| Inscrição em Alerta       | ![image](https://github.com/user-attachments/assets/615685fd-11a8-403e-9a69-2e70843eca7b)|
+| Tela de Notificações      | ![image](https://github.com/user-attachments/assets/9048f843-45e6-4a89-98fc-02fa01c7d5d2)|
 
 ---
 
