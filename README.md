@@ -1,143 +1,183 @@
 # SMAE - Sistema de Monitoramento e Alerta de Emergências
 
-## Resumo do Status Atual
+![Status](https://img.shields.io/badge/status-concluído-brightgreen)
 
-O backend do SMAE foi desenvolvido utilizando Java Spring Boot, seguindo os princípios de arquitetura REST e implementando padrões de projeto que garantem escalabilidade, manutenibilidade e segurança. A aplicação é responsável por processar dados de sensores, gerenciar usuários, áreas de risco e alertas, além de fornecer APIs para o aplicativo mobile e outros sistemas integrados.
+## Tabela de Conteúdos
 
-## Tecnologias Utilizadas
-
-* **Java:** versão 21
-* **Spring Boot:** 3.5.0
-* **Gerenciador de Dependências:** Maven
-* **Banco de Dados:** Oracle (acesso via SQL Developer)
-* **Mobile (futuro):** React Native
-* **Docker:** configurado para facilitar a execução local
-* **Swagger:** implementado para documentação e testes de endpoints
-* **Hospedagem em Nuvem:** Render
-
-## Execução do Projeto
-
-1. Clone o repositório:
-
-   ```bash
-   git clone [<URL_DO_REPOSITORIO>](https://github.com/Pablo0703/java_global_solution)
-   ```
-
-2. Navegue até a pasta do projeto:
-
-   ```bash
-   cd...
-   ```
-
-3. Para rodar via Docker (certifique-se de que Docker esteja instalado):
-
-   ```bash
-   docker-compose up
-   ```
-
-4. Ou execute localmente com Maven:
-
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-5. A aplicação estará disponível em:
-
-   ```
-   http://localhost:8080
-   ```
-
-🔄 Sequência de Funcionamento do Sistema
-Cadastro de Usuário
-
-Inicie criando os usuários que irão interagir com o sistema, como operadores ou responsáveis por áreas monitoradas.
-
-Cadastro da Área de Risco
-
-Registre as áreas que serão monitoradas. Cada área pode conter sensores associados e será base para alertas futuros.
-
-Cadastro de Sensor
-
-Adicione sensores que serão posicionados nas áreas de risco. Esses sensores serão responsáveis por enviar leituras ambientais (temperatura, umidade, etc.).
-
-Registro de Leitura do Sensor
-
-As leituras dos sensores são registradas no sistema, indicando os valores detectados em tempo real ou por intervalo.
-
-Criação de Alerta
-
-Configure alertas com base em condições específicas (ex: temperatura acima de 40°C). Esses alertas serão ativados quando leituras excederem os limites definidos.
-
-Inscrição em Alerta
-
-Usuários podem se inscrever para receber alertas de áreas específicas ou tipos de risco. Isso garante que apenas interessados sejam notificados.
-
-Geração de Notificação
-
-Quando um alerta é ativado, o sistema gera automaticamente uma notificação para os usuários inscritos, alertando sobre o risco detectado.
-
-
-
-## Banco de Dados
-
-* A aplicação conecta-se a um banco Oracle configurado via application.properties ou application.yml.
-* Porta padrão: 1521
-
-> *Informações de acesso ao banco foram omitidas por segurança.*
-
-## Swagger
-
-* **Implementado**.
-* A documentação dos endpoints pode ser acessada em:
-
-  * Local: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
-  * Render: [https://java-global-solution.onrender.com/swagger-ui/index.html](https://java-global-solution.onrender.com/swagger-ui/index.html)
-
-## Deploy
-
-* Realizado via **Render**.
-* URL de produção: [https://java-global-solution.onrender.com](https://java-global-solution.onrender.com)
-
-## Testes da API com Insomnia
-
-Para testar os endpoints da API do SMAE, foi utilizada a ferramenta [Insomnia](https://insomnia.rest/), que permite realizar requisições HTTP de forma prática e eficiente. Com ela, foram testadas todas as funcionalidades principais da API.
-
-As operações testadas incluíram:
-
-* **POST** – Criação de novos registros (usuários, sensores, áreas de risco, alertas, notificações, inscrições)
-* **PUT** – Atualização de dados existentes
-* **GET** – Consulta de listas e itens individuais por ID
-* **DELETE** – Remoção de registros
-
-> Caso deseje reproduzir os testes, recomenda-se criar um workspace no Insomnia e configurar os endpoints com base na documentação da API. Todos os testes foram realizados utilizando o backend rodando em `http://localhost:8080`.
-
-## Endpoints - Acesso Rápido
-
-* Local: `http://localhost:8080`
-* Render: `https://java-global-solution.onrender.com`
-* Swagger Local: `http://localhost:8080/swagger-ui/index.html`
-* Swagger Render: `https://java-global-solution.onrender.com/swagger-ui/index.html`
-
-### Endpoints Disponíveis:
-
-* `GET /usuarios`
-* `GET /alertas`
-* `GET /areas`
-* `GET /inscricoes`
-* `GET /leituras`
-* `GET /notificacoes`
-* `GET /sensores`
-
-### Ordem Recomendada para Testes de POST:
-
-1. **Usuários** → `POST /usuarios`
-2. **Áreas de Risco** → `POST /areas`
-3. **Sensores** → `POST /sensores` (requere `idArea` já cadastrado)
-4. **Leituras de Sensor** → `POST /leituras` (requere `sensorId` já cadastrado)
-5. **Alertas** → `POST /alertas` (requere `idArea` já cadastrado)
-6. **Notificações** → `POST /notificacoes` (requere `alertaId` já cadastrado)
-7. **Inscrição de Alerta** → `POST /inscricoes` (requere `idUsuario` e `idArea` já cadastrados)
+1. [Descrição do Projeto](#1-descrição-do-projeto)
+2. [Tecnologias Utilizadas](#2-tecnologias-utilizadas)
+3. [Execução do Projeto](#3-execução-do-projeto)
+4. [Sequência de Funcionamento](#4-sequência-de-funcionamento)
+5. [Banco de Dados](#5-banco-de-dados)
+6. [Swagger](#6-swagger)
+7. [Deploy](#7-deploy)
+8. [Testes com Insomnia](#8-testes-com-insomnia)
+9. [Endpoints - Acesso Rápido](#9-endpoints---acesso-rápido)
+10. [Ordem Recomendada para Testes](#10-ordem-recomendada-para-testes)
+11. [Prints do Swagger](#11-prints-do-swagger)
+12. [Autores](#12-autores)
 
 ---
 
-**Autor:** Pablo Lopes - RM556834
+## 1. Descrição do Projeto
+
+O **SMAE** é um sistema backend construído com **Java Spring Boot**, seguindo arquitetura REST. Seu objetivo é permitir o monitoramento de áreas de risco através de sensores ambientais, alertas automatizados e notificações aos usuários. Ele serve como base para integração com um aplicativo mobile e futuros sistemas distribuídos.
+
+---
+
+## 2. Tecnologias Utilizadas
+
+* **Java:** 21
+* **Spring Boot:** 3.5.0
+* **Maven:** gerenciamento de dependências
+* **Banco de Dados:** Oracle
+* **Swagger:** documentação da API
+* **Docker:** para execução local simplificada
+* **Hospedagem:** Render
+* **Mobile (futuro):** React Native
+
+---
+
+## 3. Execução do Projeto
+
+### 3.1 Clonando o Repositório
+
+```bash
+git clone https://github.com/Pablo0703/java_global_solution
+```
+
+### 3.2 Executando via Docker
+
+```bash
+docker-compose up
+```
+
+### 3.3 Executando Localmente
+
+```bash
+./mvnw spring-boot:run
+```
+
+### 3.4 Acesso
+
+```
+http://localhost:8080
+```
+
+---
+
+## 4. Sequência de Funcionamento
+
+1. **Cadastro de Usuário**
+2. **Cadastro de Área de Risco**
+3. **Cadastro de Sensor**
+4. **Registro de Leitura do Sensor**
+5. **Criação de Alerta**
+6. **Inscrição em Alerta**
+7. **Geração de Notificação**
+
+---
+
+## 5. Banco de Dados
+
+* Conexão com **Oracle DB**
+* Configuração via `application.properties` ou `application.yml`
+* Porta padrão: `1521`
+
+> *Informações sensíveis como login e senha foram omitidas.*
+
+---
+
+## 6. Swagger
+
+* Local: [`http://localhost:8080/swagger-ui/index.html`](http://localhost:8080/swagger-ui/index.html)
+* Deploy: [`https://java-global-solution.onrender.com/swagger-ui/index.html`](https://java-global-solution.onrender.com/swagger-ui/index.html)
+
+---
+
+## 7. Deploy
+
+* Hospedagem via **Render**
+* Produção: [`https://java-global-solution.onrender.com`](https://java-global-solution.onrender.com)
+
+---
+
+## 8. Testes com Insomnia
+
+A API foi testada usando o [Insomnia](https://insomnia.rest/), realizando requisições:
+
+* `POST`: criação de entidades
+* `PUT`: atualização de registros
+* `GET`: listagem e busca por ID
+* `DELETE`: exclusão de registros
+
+> Recomendado: criar um workspace no Insomnia e seguir os endpoints documentados via Swagger.
+
+---
+
+## 9. Endpoints - Acesso Rápido
+
+| Ambiente       | Link                                                              |
+| -------------- | ----------------------------------------------------------------- |
+| Local          | `http://localhost:8080`                                           |
+| Swagger Local  | `http://localhost:8080/swagger-ui/index.html`                     |
+| Render         | `https://java-global-solution.onrender.com`                       |
+| Swagger Render | `https://java-global-solution.onrender.com/swagger-ui/index.html` |
+
+Endpoints Diretos (em ordem de uso recomendada):
+
+http://localhost:8080/usuarios
+
+http://localhost:8080/areas
+
+http://localhost:8080/sensores
+
+http://localhost:8080/leituras
+
+http://localhost:8080/alertas
+
+http://localhost:8080/notificacoes
+
+http://localhost:8080/inscricoes
+
+---
+
+## 10. Ordem Recomendada para Testes
+
+1. `POST /usuarios`
+2. `POST /areas`
+3. `POST /sensores`
+4. `POST /leituras`
+5. `POST /alertas`
+6. `POST /notificacoes`
+7. `POST /inscricoes`
+
+---
+
+## 11. Prints do Swagger
+
+A seguir, prints da documentação Swagger demonstrando cada etapa do funcionamento da API:
+
+| Funcionalidade            | Imagem                                         |
+| ------------------------- | ---------------------------------------------- |
+| Cadastro de Usuário       | ![image](https://github.com/user-attachments/assets/df630f43-c668-4df9-9a56-48e45ee090af)|
+
+| Cadastro de Área de Risco | ![image](https://github.com/user-attachments/assets/50b6f69d-2056-4359-b516-5f1d6425a07e)|
+
+| Cadastro de Sensor        | ![image](https://github.com/user-attachments/assets/b82f2540-453a-4779-8597-48fa243a18f7)|
+
+| Leitura de Sensores       | ![image](https://github.com/user-attachments/assets/4915bfcb-f813-4369-9261-1360fb53bbb2)|
+
+| Criação de Alerta         | ![image](https://github.com/user-attachments/assets/cc877b92-b855-45b9-9856-08fbfe904881)|
+
+| Inscrição em Alerta       | ![image](https://github.com/user-attachments/assets/5d94a087-6e2e-4c5b-a2e0-042009163e98)|
+
+| Tela de Notificações      | ![image](https://github.com/user-attachments/assets/7c0accc1-6941-4595-8a44-2b0a64616ab8)|
+
+## 12. Autores
+
+| RM     | Nome                            |
+| ------ | ------------------------------- |
+| 556834 | Pablo Lopes Doria de Andrade    |
+| 558711 | Diego Santos Cardoso            |
+| 557047 | Vinicius Leopoldino de Oliveira |
